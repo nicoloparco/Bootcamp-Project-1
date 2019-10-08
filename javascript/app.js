@@ -11,10 +11,10 @@ var app_fireBase = {};
     measurementId: "G-2XCQR7N9CG"
     
   };
-  firebase.initializeApp(config);
+ 
 
 
   app_fireBase = firebase;
 
 
-}
+})()
