@@ -16,5 +16,4 @@ var app_fireBase = {};
 
   app_fireBase = firebase;
 
-
-}
+})()
