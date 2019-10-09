@@ -1,19 +1,19 @@
-var app_fireBase = {};
+var app_firebase  = {};
 (function(){
-    var config = {
-    apiKey: "AIzaSyBeDUls194hweF8fuEZ4Af1B9g7x4EssQ4",
-    authDomain: "project-1-9f4d2.firebaseapp.com",
-    databaseURL: "https://project-1-9f4d2.firebaseio.com",
-    projectId: "project-1-9f4d2",
-    storageBucket: "",
-    messagingSenderId: "183023812498",
-    appId: "1:183023812498:web:e1d31d3841ccf273f2cb4b",
-    measurementId: "G-2XCQR7N9CG"
-    
-  };
-  firebase.initializeApp(config);
+    // App's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBTShxrQ86HXMkfliHBtOZd0iVhSAU5Gsg",
+      authDomain: "music-database-255014.firebaseapp.com",
+      databaseURL: "https://music-database-255014.firebaseio.com",
+      projectId: "music-database-255014",
+      storageBucket: "",
+      messagingSenderId: "675453674002",
+      appId: "1:675453674002:web:41a3b3249b9f468f17aecb",
+      measurementId: "G-X2FFSDKZL8"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-
-  app_fireBase = firebase;
-
+    app_firebase = firebase;
 })()
