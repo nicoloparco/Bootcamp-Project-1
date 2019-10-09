@@ -8,6 +8,10 @@ body{
     padding: 0;
 }
 
+nav{
+    margin-bottom: 20px;
+}
+
 .navbar-brand, a{
     color: black;
 }
