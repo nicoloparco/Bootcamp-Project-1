@@ -25,11 +25,12 @@ p{
 }
 
 .search-form{
-    width: 70%;
+    width: 80%;
 }
 
 #search-input, .search-feild{
     border-radius: 10px;
+    width: 450px;
 }
 
 .button-search, .screen-reader-text, .icon-search{
