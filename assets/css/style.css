@@ -4,8 +4,8 @@
 }
 
 body{
-    margin: 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .logo{
@@ -13,9 +13,35 @@ body{
 }
 
 .row{
-    background-color: blueviolet;
+   background-color: #ebebeb;
 }
 p{
     margin: 10px;
     padding: 10px;
+}
+
+.logo{
+    width: 50px;
+    margin-right: 20px;
+}
+.logo1{
+    width: 100px;
+    margin-right: 20px;
+}
+.logo2{  
+    width: 100px;
+    margin-right: 20px;}
+.logo3{
+    width: 150px;
+    margin-right: 20px;}
+
+.flex-container{
+    display: flexbox;
+    list-style-type: none;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer, .flex-container small {
+    text-align: center;
 }
