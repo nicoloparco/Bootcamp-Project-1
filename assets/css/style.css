@@ -8,6 +8,10 @@ body{
     padding: 0;
 }
 
+.navbar-brand, a{
+    color: black;
+}
+
 .logo{
     width: 70px;
 }
@@ -20,26 +24,44 @@ p{
     padding: 10px;
 }
 
-.logo{
+.search-form{
+    width: 70%;
+}
+
+#search-input, .search-feild{
+    border-radius: 10px;
+}
+
+.button-search, .screen-reader-text, .icon-search{
+    border-radius: 5px;
+}
+
+.logo0{
     width: 50px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 .logo1{
     width: 100px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 .logo2{  
     width: 100px;
-    margin-right: 20px;}
+    /* margin-right: 20px; */
+}
 .logo3{
     width: 150px;
-    margin-right: 20px;}
+    /* margin-right: 20px; */
+}
+
+.logo4{
+    width: 100px;
+    /* margin-right: 20px; */
+}
 
 .flex-container{
-    display: flexbox;
+    display: inline-flexbox;
     list-style-type: none;
     align-items: center;
-    padding: 10px;
 }
 
 .footer, .flex-container small {
