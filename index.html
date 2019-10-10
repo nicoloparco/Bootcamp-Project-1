@@ -47,13 +47,46 @@
                   <div class = "video"><iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-4 border solid 4px border-dark">
-                  <h3>Add A Comment!</h3>
-                  <ul>
-                    <li>Comment 1</li>
-                    <li>Comment 2</li>
-                    <li>Comment 3</li>
-                    <li>Comment 4</li>
-                    <li>Comment 5</li>
+                  <h3><a href="profile.html">User Comments</a></h3>
+                  <ul class="comment-section">
+
+                      <li class="comment user-comment">
+                          <div class="info">
+                              <a href="#">User</a>
+                              <span>4 hours ago</span>
+                          </div>
+                          <a class="avatar" href="#">
+                              <img src="images/avatar_user_1.jpg" width="35" alt="Profile Avatar" title="User" />
+                          </a>
+                          <p>Suspendisse gravida sem?</p>
+                      </li>
+                  
+                      <li class="comment author-comment">
+                          <div class="info">
+                              <a href="#">user</a>
+                              <span>3 hours ago</span>
+                          </div>
+                          <a class="avatar" href="#">
+                              <img src="images/avatar_author.jpg" width="35" alt="Profile Avatar" title="User" />
+                          </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
+                  
+                      </li>
+                  
+                      <!-- More comments -->
+                  
+                      <li class="write-new">
+                  
+                          <form action="#" method="post">
+                              <textarea placeholder="Write your comment here" name="comment"></textarea>
+                              <div>
+                                  <img src="" width="35" alt="Profile" title="User" />
+                                  <button type="submit">Submit</button>
+                              </div>
+                          </form>
+                  
+                      </li>
+                  
                   </ul>
                 </div>
             </div>

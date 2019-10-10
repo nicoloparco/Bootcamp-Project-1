@@ -42,10 +42,14 @@ text-decoration:overline;
 }
 
 .container{
-    border: 1px solid whitesmoke;
+  
 }
 
 h3{
 font-family:"Bungee Shade";
 text-shadow:2px 2px black;
+}
+
+.col-md-4{
+    
 }
