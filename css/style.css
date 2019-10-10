@@ -30,11 +30,11 @@
 #wrapper h1{
 	background: 
 	-webkit-repeating-linear-gradient(-45deg, 
-		rgb(18, 83, 93) , 
-		rgb(18, 83, 93) 20px,
-		rgb(64, 111, 118) 20px,
-		rgb(64, 111, 118) 40px,
-		rgb(18, 83, 93) 40px);
+		rgb(18, 24, 110) , 
+		rgb(18, 24, 110) 20px,
+		rgb(18, 24, 110) 20px,
+		rgb(18, 24, 110) 40px,
+		rgb(18, 24, 110) 40px);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 }
