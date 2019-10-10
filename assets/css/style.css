@@ -29,7 +29,7 @@ p{
 }
 
 .search-form{
-    width: 80%;
+    width: 70%;
 }
 
 #search-input, .search-feild{
@@ -39,6 +39,23 @@ p{
 
 .button-search, .screen-reader-text, .icon-search{
     border-radius: 5px;
+}
+
+.login-form,
+.login-form h1,
+.login-form span,
+.login-form input,
+.login-form label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.login-form input{
+    /* background-color: #ebebeb; */
+    border-radius: 5px;
+    border: 1px solid darkgray;
 }
 
 .logo0{
