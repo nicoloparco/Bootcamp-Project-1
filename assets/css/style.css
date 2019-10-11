@@ -45,11 +45,19 @@ text-decoration:overline;
   
 }
 
-h3{
+h3, h2{
+    
 font-family:"Bungee Shade";
 text-shadow:2px 2px black;
+color:slategrey;
 }
 
-.col-md-4{
+a{
+    color:slategrey;
+    text-decoration:overline;
     
 }
+
+.comment-section{
+}
+
