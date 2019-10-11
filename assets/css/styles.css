@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.navbar-brand, a{
+    color: black;
+}
+
+.logo{
+    width: 70px;
+}
+ .login-form,
+.login-form h1,
+.login-form span,
+.login-form input,
+.login-form label
+.login-form small
+ {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    /* position: relative;
+    right: -450px; */
+    
+} 
+
+.login-form input{
+    /* background-color: #ebebeb; */
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+
+.sign-up{
+    color: red;
+   position: relative;
+   top: -20px;
+}
+
+ 
+
+.logo0{
+    width: 50px;
+    /* margin-right: 20px; */
+}
+.logo1{
+    width: 100px;
+    /* margin-right: 20px; */
+}
+.logo2{  
+    width: 100px;
+    /* margin-right: 20px; */
+}
+.logo3{
+    width: 150px;
+    /* margin-right: 20px; */
+}
+
+.logo4{
+    width: 100px;
+    /* margin-right: 20px; */
+}
+
+.flex-container{
+    display: inline-flexbox;
+    list-style-type: none;
+    align-items: center;
+    background-color: white;
+}
+
+.footer, .flex-container small {
+    text-align: center;
+}
