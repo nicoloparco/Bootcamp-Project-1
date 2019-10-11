@@ -18,9 +18,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
 </head>
 <body>
- 
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#"><img class="logo" src="./assets/images/project logo.PNG">wire v2</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand text-light"  href="index.html">Music-App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,59 +30,126 @@
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="profile.html">profile</a>
+          <a class="nav-link" href="profile.html">Profile</a>
         </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <a id="btn-logout" href="#" class="btn btn-info btn-lg">
+        <span id="glyphicon glyphicon-log-out"></span> Log out
+      </a>
+    </div>
+  </nav>
+
+
+  <!--carousel images-->
+  <div class= "container">
+      <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="10000">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  Search for your favorite music videos!
+                  </textarea>
+                  </form>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  Find info on your favorite artists!
+                  </textarea>
+                  </form>
+            </div>
+            <div class="carousel-item">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  AT THE SAME TIME!!
+                  </textarea>
+                  </form>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+  </div>
+  <br>
+  <div class="container">        
+            <div class="row">
+                <div class="col-md-8 border solid 4px border-dark">
+                  <h2>Youtube API</h2>
+                  <div class = "video"><iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-4 border solid 4px border-dark">
+                  <h3><a class="user-comments" href="profile.html">User-Comments</a></h3>
+                  <ul class="comment-section">
+
+                      <li class="comment user-comment">
+                          <div class="info">
+                              <a href="#">User</a>
+                              <span>4 hours ago</span>
+                          </div>
+                          <a class="avatar" href="#">
+                              <img src="images/avatar_user_1.jpg" width="35" alt="Profile Avatar" title="User" />
+                          </a>
+                          <p>Suspendisse gravida sem?</p>
+                      </li>
+                  
+                      <li class="comment author-comment">
+                          <div class="info">
+                              <a href="#">user</a>
+                              <span>3 hours ago</span>
+                          </div>
+                          <a class="avatar" href="#">
+                              <img src="images/avatar_author.jpg" width="35" alt="Profile Avatar" title="User" />
+                          </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
+                  
+                      </li>
+                  
+                      <!-- More comments -->
+                  
+                      <li class="write-new">
+                  
+                          <form action="#" method="post">
+                              <textarea placeholder="Write your comment here" name="comment"></textarea>
+                              <div>
+                                  <img src="" width="35" alt="Profile" title="User" />
+                                  <button type="submit">Submit</button>
+                              </div>
+                          </form>
+                  
+                      </li>
+                  
+                  </ul>
+                </div>
+            </div>
+            <div class="row border solid 4px border-dark d-flex flex-column">
+                <h3>BandsInTown API</h3>
+                <p>Artist Name</p>
+                <br>
+                <p>Artist Albums</p>
+                <br>
+                <p>Picture of Artist</p>
+                <br>
+                <p>Upcoming Concert Info</p>
+            </div>
+            <div class="row border solid 4px border-dark">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Insert Comments Here" aria-label="Insert Comments Here" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2">Post</button>
+                    </div>
+        </div>
     </div>  
 
-    <a id="btn-logout" href="#" class="btn btn-info btn-lg">
-            <span id="glyphicon glyphicon-log-out"></span> Log out
-          </a>
-</nav>
-
-
-<div class="container">        
-    <div class="row">
-        <div class="col-md-8 border solid 4px border-dark">
-          <h2>Current Youtube Video</h2>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="col-md-4 border solid 4px border-dark">
-          <h3>Recent User Interaction</h3>
-          <ul>
-            <li>Comment 1</li>
-            <li>Comment 2</li>
-            <li>Comment 3</li>
-            <li>Comment 4</li>
-            <li>Comment 5</li>
-          </ul>
-        </div>
-    </div>
-    <div class="row border solid 4px border-dark d-flex flex-column">
-        <h3>Current artist info</h3>
-        <p>Artist Name</p>
-        <br>
-        <p>Artist Albums</p>
-        <br>
-        <p>Picture of Artist</p>
-        <br>
-        <p>Upcoming Concert Info</p>
-    </div>
-    <div class="row border solid 4px border-dark">
-        <p>Comments on current video</p>
-    </div>
-</div>
-</div>  
-
-  <footer class="footer mt-auto py-3">
-    <div class="flex-container">
-      <li><img class="logo1" src="./assets/images/3 logo.jpg"></li>
-      <li><img class="logo4" src="./assets/images/firebase_logo_shot.png"></li>
-      <li><img class="logo2" src="./assets/images/api logo.jpeg"></li>
-      <li><img class="logo3" src="./assets/images/jquery_logo.png"></li>
-      <span class="text-muted"><small>Music Project1 Copyright &#9400; 2019</small></span> 
-    </div>
-  </footer>
 
   <script src="./assets/javascript/app.js"></script>
 

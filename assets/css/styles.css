@@ -1,78 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+
 body{
-    margin: 0;
-    padding: 0;
+    background-color:rgb(52, 58, 64);
+    color:whitesmoke;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-nav{
-    margin-bottom: 10px;
-    background-color: white;
+.navbar-brand{
+color:slategrey !important;
+text-shadow:2px 2px black;
+font-size:30px;
+font-family:"Bungee Shade";
+text-decoration:overline;
+
+}
+.navbar{
+    border:1px slategrey;
 }
 
-.navbar-brand, a{
-    color: black;
-}
-
-.logo{
-    width: 70px;
-}
- .login-form,
-.login-form h1,
-.login-form span,
-.login-form input,
-.login-form label
-.login-form small
- {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    /* position: relative;
-    right: -450px; */
+.video{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    object-fit:fill;
+    }
     
-} 
+    .video-container iframe,
+    .video-container object,
+    .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    }
 
-.login-form input{
-    /* background-color: #ebebeb; */
-    border-radius: 5px;
-    border: 1px solid darkgray;
-}
-
-.sign-up{
-    color: red;
-   position: relative;
-   top: -20px;
-}
-
- 
-
-.logo0{
-    width: 50px;
-    /* margin-right: 20px; */
-}
-.logo1{
-    width: 100px;
-    /* margin-right: 20px; */
-}
-.logo2{  
-    width: 100px;
-    /* margin-right: 20px; */
-}
-.logo3{
-    width: 150px;
-    /* margin-right: 20px; */
+.btn-outline-primary{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:slategrey;
+    border-color: slategrey;
+    
 }
 
-.logo4{
-    width: 100px;
-    /* margin-right: 20px; */
+.container{
+  
 }
 
-.flex-container{
-    display: inline-flexbox;
-    list-style-type: none;
-    align-items: center;
-    background-color: white;
+h3, h2{
+    
+font-family:"Bungee Shade";
+text-shadow:2px 2px black;
+color:slategrey;
 }
 
-.footer, .flex-container small {
-    text-align: center;
+a{
+    color:slategrey;
+    text-decoration:overline;
+    
+}
+
+.comment-section{
+}
+
+.carousel-item{
+    width:96%;
+    padding:2%;
+    height:180px;
+    font:36px/44px sans-serif;
+    color:white;
+    text-shadow:1px 1px 5px black;
+     background:url(/assets/images/youtube.music.png);
+     text-align:center;
+     background-repeat:no-repeat;
+     background-position:center;
 }
