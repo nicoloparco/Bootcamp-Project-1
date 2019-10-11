@@ -1,3 +1,23 @@
+ 
+.animate{
+	position: absolute;
+	top: 0px;
+	width: 88%;	
+	padding: 18px 6% 60px 6%;
+	margin: 0 0 35px 0;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189,0.8);
+	box-shadow:	
+		0pt 2px 5px rgba(105, 108, 109,  0.7),	
+		0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	border-radius: 5px;
+}
+.login{
+	z-index: 22;
+}
+
+
+
 
 #subscribe, 
 #login{
@@ -79,7 +99,7 @@ input {
 } 
 
 /*styling both submit buttons */
-#wrapper p.button input{
+.wrapper p.button input{
 	width: 30%;
 	cursor: pointer;	
 	background: rgb(211, 0, 0);
@@ -97,11 +117,11 @@ input {
 		0px 5px 3px 3px rgb(210, 210, 210);
 	transition: all 0.2s linear;
 }
-#wrapper p.button input:hover{
+.wrapper p.button input:hover{
 	background: rgb(57, 57, 59);
 }
-#wrapper p.button input:active,
-#wrapper p.button input:focus{
+.wrapper p.button input:active,
+.wrapper p.button input:focus{
 	background: rgb(40, 137, 154);
 	position: relative;
 	top: 1px;
@@ -129,7 +149,3 @@ p.signin.button{
 }
 .keeplogin label{
 	width: 80%;
-}
-
-
-
