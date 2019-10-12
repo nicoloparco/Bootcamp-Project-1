@@ -14,7 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js"></script>
 </head>
 <body>
  
@@ -42,34 +41,47 @@
 
 
   <!--carousel images-->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <h2 class="carousel-text">Search for your favorite music videos!</h2>
+  <div class= "container">
+      <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="10000">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  Search for your favorite music videos!
+                  </textarea>
+                  </form>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  Find info on your favorite artists!
+                  </textarea>
+                  </form>
+            </div>
+            <div class="carousel-item">
+                <form action="/html/tags/html_form_tag_action.cfm" method="post">
+                  <textarea name="text" id="text">
+                  AT THE SAME TIME!!
+                  </textarea>
+                  </form>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        <div class="carousel-item">
-            <h2 class="carousel-text">Get info on your favortie Artists!</h2>
-        </div>
-        <div class="carousel-item">
-            <h2 class="carousel-text">One search only!</h2>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    
+  </div>
   <br>
   <div class="container">        
             <div class="row">
                 <div class="col-md-8 border solid 4px border-dark">
                   <h2>Youtube API</h2>
-                  <div class ="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                  <div class = "video"><iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-4 border solid 4px border-dark">
                   <h3><a class="user-comments" href="profile.html">User-Comments</a></h3>
@@ -81,7 +93,7 @@
                               <span>4 hours ago</span>
                           </div>
                           <a class="avatar" href="#">
-                              <img src="images/avatar_user_1.jpg" width="35" alt="Profile Avatar" title="User" />
+                              <!-- <img src="assets/images/avatar_user_1.jpg" width="35" alt="Profile Avatar" title="User" /> -->
                           </a>
                           <p>Suspendisse gravida sem?</p>
                       </li>
@@ -92,7 +104,7 @@
                               <span>3 hours ago</span>
                           </div>
                           <a class="avatar" href="#">
-                              <img src="images/avatar_author.jpg" width="35" alt="Profile Avatar" title="User" />
+                              <!-- <img src="images/avatar_author.jpg" width="35" alt="Profile Avatar" title="User" /> -->
                           </a>
                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse gravida sem sit amet molestie portitor.</p>
                   
@@ -119,6 +131,8 @@
                 <h3>BandsInTown API</h3>
                 <p>Artist Name</p>
                 <br>
+                <p>Artist Albums</p>
+                <br>
                 <p>Picture of Artist</p>
                 <br>
                 <p>Upcoming Concert Info</p>
@@ -127,11 +141,11 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Insert Comments Here" aria-label="Insert Comments Here" aria-describedby="button-addon2" id="commentBar">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-primary" type="button" id="button-addon2" id="commentButton">Post</button>
+                      <button class="btn btn-outline-primary" type="button" id="commentButton">Post</button>
                     </div>
                 </div>
-            </div>
-           <div id="comments"></div>
+          </div>  
+          <div id="comments"></div>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
