@@ -42,7 +42,6 @@ text-decoration:overline;
 }
 
 .container{
-  
 }
 
 h3, h2{
@@ -65,10 +64,11 @@ a{
     width:96%;
     padding:2%;
     height:180px;
-    font:36px/44px sans-serif;
+    font:36px/44px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 36px/44px;
     color:white;
     text-shadow:1px 1px 5px black;
-     background:url(/assets/images/youtube.music.png);
+   
      text-align:center;
      background-repeat:no-repeat;
      background-position:center;
