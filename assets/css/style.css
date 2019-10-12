@@ -6,7 +6,7 @@ body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .navbar-brand{
-color:slategrey !important;
+color:silver !important;
 text-shadow:2px 2px black;
 font-size:30px;
 font-family:"Bungee Shade";
@@ -15,7 +15,7 @@ transition:1s ease;
 
 }
 .navbar{
-    border:1px slategrey;
+    border:1px whitesmoke;
 }
 
 .video{
@@ -37,8 +37,8 @@ transition:1s ease;
 
 .btn-outline-primary{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:slategrey;
-    border-color: slategrey;
+    color:whitesmoke;
+    border-color: whitesmoke;
     
 }
 
@@ -46,11 +46,11 @@ h3, h2{
     
 font-family:"Bungee Shade";
 text-shadow:2px 2px black;
-color:slategrey;
+color:whitesmoke;
 }
 
 a{
-    color:slategrey;
+    color:whitesmoke;
     text-decoration:overline;
     transition:1s ease;
     
@@ -58,7 +58,7 @@ a{
 
 .carousel-text{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:steelblue;
+    color:whitesmoke;
     text-align:center;
     font-size:50px;
     text-shadow:4px 4px black;
