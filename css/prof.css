@@ -39,8 +39,15 @@ body
     padding: 20px;
     margin-left: 20px;
     
+    
 }
+
+body {
+    background-color: rgb(51, 52, 54);
+    color: white;
+  }
 
 .col-md-6{
     border: 2px solid gray;
+    color: white;
 }
