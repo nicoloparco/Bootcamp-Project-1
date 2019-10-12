@@ -11,6 +11,7 @@ text-shadow:2px 2px black;
 font-size:30px;
 font-family:"Bungee Shade";
 text-decoration:overline;
+transition:1s ease;
 
 }
 .navbar{
@@ -57,20 +58,11 @@ a{
     
 }
 
-.comment-section{
+.carousel-text{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:steelblue;
+    text-align:center;
+    font-size:50px;
+    text-shadow:4px 4px black;
+    
 }
-
-.carousel-item{
-    width:96%;
-    padding:2%;
-    height:180px;
-    font:36px/44px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 36px/44px;
-    color:white;
-    text-shadow:1px 1px 5px black;
-   
-     text-align:center;
-     background-repeat:no-repeat;
-     background-position:center;
-}
-
