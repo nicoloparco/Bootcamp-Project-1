@@ -42,9 +42,6 @@ transition:1s ease;
     
 }
 
-.container{
-}
-
 h3, h2{
     
 font-family:"Bungee Shade";
@@ -55,6 +52,7 @@ color:slategrey;
 a{
     color:slategrey;
     text-decoration:overline;
+    transition:1s ease;
     
 }
 
@@ -65,4 +63,8 @@ a{
     font-size:50px;
     text-shadow:4px 4px black;
     
+}
+footer{
+    text-align:center;
+    opacity: .25;
 }
