@@ -32,3 +32,15 @@ body
     width: 20%; 
 }
 }
+
+
+.row{
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 20px;
+    
+}
+
+.col-md-6{
+    border: 2px solid gray;
+}
