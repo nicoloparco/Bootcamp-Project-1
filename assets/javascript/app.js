@@ -1,4 +1,4 @@
-//  alert ("working");
+// alert ("working");
 
 var config = {
     apiKey: "AIzaSyA97hzCgDRHVJFCiOAJ6RVzx2F1hZsfKj4",
@@ -15,7 +15,6 @@ var config = {
 
 
    firebase.auth.Auth.Persistence.LOCAL;
-
 
  $("#btn-login").click(function(){
      var email= $("#username").val();
@@ -53,8 +52,8 @@ var config = {
             var errorCode = error.code;
             var errorMessage = error.message;
 
-            console.log(errorCode);
-            console.log(errorMessage);
+            // console.log(errorCode);
+            // console.log(errorMessage);
 
  
             alert("message : " + errorMessage);
@@ -64,7 +63,7 @@ var config = {
         alert("password does not match");
     }
     }else{
-       //  alert("");
+       
     }
 });
 
@@ -74,3 +73,216 @@ var config = {
    firebase.auth().signOut();
  });
 
+
+
+ var database = firebase.database();
+
+    // Initial Values
+    var phone = "";
+    var address = "";
+    var bio = "";
+    var fName = "";
+    var mName = "";
+    var lName = "";
+    var gender = "";
+
+   
+ 
+ $("#btn-update").click(function(event){
+
+  event.preventDefault();
+
+  var phone = $("#phonenumber").val().trim();
+  var address = $("#address").val().trim();
+  var bio = $("#bio").val().trim();
+  var fName= $("#firstname").val().trim();
+  var mName = $("#middlename").val().trim();
+  var lName = $("#lastname").val().trim();
+  var gender = $("#gender").val().trim();
+
+  var rootRef = firebase.database().ref().child("Users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID);
+
+  // datbase.ref().set({
+  //   phone: phone,
+  //   address: address,
+  //   bio: bio,
+  //   firstname:fName,
+  //   middlename: mName,
+  //   lastname: lName,
+  //   gender: gender,
+
+  // });
+
+  database.ref().on("value", function(snapshot){
+    console.log(snapshot.val());
+    console.log(snapshot.val().bio);
+
+    $("#addArea").text(snapshot.val().address);
+    $("#phoneArea").text(snapshot.val().phone);
+    $("#bioArea").text(snapshot.val().bio);
+    $("#fnArea").text(snapshot.val().fName);
+    $("#mnArea").text(snapshot.val().mName);
+    $("#lnArea").text(snapshot.val().lName);
+    $("#genArea").text(snapshot.val().gender);
+  })
+
+  if(fName!="" && lName!="" && phone!="" && mName!="" && gender!="" && bio!="" && address!=""){
+  
+    var userData = {
+      "phone": phone,
+      "address": address,
+      "bio": bio,
+      "firstname": fName,
+      "middlename": mName,
+      "lastname": lName,
+      "gender": gender,
+
+    };
+       
+    usersRef.set(userData, function(error){
+      if(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        // console.log(errorCode);
+        // console.log(errorMessage);
+
+
+        alert("message : " + errorMessage);
+      }else{
+        window.location.href = "music.html";
+        
+      }
+    });
+  }else{
+    alert("Form is incomplete. Please fill out all fields.");
+
+  }
+});
+
+// Usercomments and details 
+
+var dataRef = firebase.database();
+// Initial Values
+var name = "";
+var email = "";
+var age = 0;
+var comment = "";
+// Capture Button Click
+$("#add-user").on("click", function(event) {
+  event.preventDefault();
+  // YOUR TASK!!!
+  // Code in the logic for storing and retrieving the most recent user.
+  // Dont forget to provide initial data to your Firebase database.
+  name = $("#name-input").val().trim();
+  email = $("#email-input").val().trim();
+  age = $("#age-input").val().trim();
+  comment = $("#comment-input").val().trim();
+  // Code for the push
+  dataRef.ref().push({
+    name : name,
+    email : email,
+    age : age,
+    comment : comment,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  });
+});
+// Firebase watcher + initial loader HINT: .on("value")
+dataRef.ref().on("child_added", function(snapshot) {
+  // Log everything that's coming out of snapshot
+  console.log(snapshot.val());
+  console.log(snapshot.val().name);
+  console.log(snapshot.val().email);
+  console.log(snapshot.val().age);
+  console.log(snapshot.val().comment);
+  // Change the HTML to reflect
+  $("#comment-display").append(`<p>${snapshot.val().email}</p> <p>${snapshot.val().comment}</p>`);  
+  // $("#email-display").append(`<p>${snapshot.val().email}</p>`);
+  // $("#age-display").append(`<p>${snapshot.val().age}</p>`);
+  // $("#comment-display").append(`<p>${snapshot.val().comment}</p>`);
+
+  // Handle the errors
+ }, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+ });
+
+
+// jQuery ajax call
+
+
+var bandsAPIkey = "939b9a06865777665ef5b95c31a05910"
+var bandsBaseURL = "https://rest.bandsintown.com/artists/"
+var artistName = " "
+
+var youtubeAPIkey = "AIzaSyD2W-_IP5IKWaeNV7d397KtunHP7OawBYA"
+var youtubeBaseURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="
+var youtubeSearch = " "
+var typeVideo = "&type=video"
+
+
+//Search bar youtube/bandsintown ajax
+$("#searchButton").on("click", function (event) {
+    event.preventDefault();
+
+    $("#artistInfo").empty();
+    $(".video").empty();
+
+    var youtubeURL = youtubeBaseURL + youtubeSearch + typeVideo + "&key=" + youtubeAPIkey
+    var bandsURL = bandsBaseURL + artistName + "?app_id=" + bandsAPIkey
+    
+    let recentSearch = $("#searchBar").val().trim()
+    youtubeSearch = recentSearch
+    artistName = recentSearch
+
+
+    $.ajax({
+        url:youtubeURL,
+        method:"GET"
+    }).then(function (response) {
+        
+        $(".video").empty()
+        
+        var videoID = (response.items["0"].id.videoId)
+        const videoURL = "https://www.youtube.com/embed/" + videoID
+    
+        $(".video").append(`
+        <iframe width="560" height="315" src="${videoURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `)
+    });
+
+    $.ajax({
+        url:bandsURL,
+    }).then(function (response) {
+    
+        var artistImage = response.image_url
+        var artistEvents = response.upcoming_event_count
+        var artistPage = response.url
+        var artistName = response.name
+        var artistFacebook = response.facebook_page_url
+    
+        $("#artistInfo").empty()
+        $("#artistInfo").append(`
+        <div>
+        <img src="${artistImage}" height="300px" width="300px"></img>
+        <h3>Upcoming Events ${artistEvents}</h3>
+        <h3>${artistName}</h3>
+        <a href="${artistPage}">Bandsintown Page</a>
+        <a href="${artistFacebook}">Facebook Page</a>
+        </div>
+        `)
+    })
+
+})
+
+//Comment bar click event
+$("#commentButton").on("click", function (event) {
+    event.preventDefault();
+    let currentComment = $("#commentBar").val().trim()
+    console.log(currentComment)
+    $("#comments").append(`
+    <p>${currentComment}</p>
+    `)
+
+})
