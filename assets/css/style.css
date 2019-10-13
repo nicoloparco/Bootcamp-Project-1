@@ -80,16 +80,7 @@ footer{
     text-align:center;
     opacity: .25;
 }
-/* 
-.dropbtn {
-    background-color:  slategrey;
-    color: white;
-    padding: 5px;
-    font-size: 10x;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  } */
+
   
   .dropdown {
     position: relative;
