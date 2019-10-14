@@ -7,7 +7,7 @@
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--our stylesheet-->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Project 1</title>
     <!--bootstrap JS-->
@@ -16,6 +16,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+    <style>
+        
+        #btn-logout{
+          background-color: blue;
+          color: white;
+          border-radius: 10px;
+          margin-left: 20px;
+        }
+            </style>
  
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand text-light"  href="index.html">Music-App</a>
@@ -28,14 +37,22 @@
         <li class="nav-item active">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="profile.html">Profile</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchBar">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="searchButton">Search</button>
       </form>
+      <div class="dropdown" style="float:right;">
+        <button id="btn-logout" class="dropbtn"><small>SIGN IN</small></button>
+      <div class="dropdown-content">
+        <a href="login.html">SIGN IN</a>
+        <a href="login.html">CREATE ACCOUNT</a>
+        <a href="accsettings.html">ACCOUNT SETTINGS</a>
+      </div>
+  </div>
     </div>
   </nav>
 
@@ -70,7 +87,7 @@
                   <div class = "video"><iframe width="560" height="315" src="https://www.youtube.com/embed/tfSS1e3kYeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 </div>
                 <div class="col-md-4 border solid 4px border-dark">
-                  <h3><a class="user-comments" href="profile.html">User-Comments</a></h3>
+                  <h3><a class="user-comments" href="login.html">User-Comments</a></h3>
                   <ul class="comment-section">
 
                       <li class="comment user-comment">
@@ -111,6 +128,14 @@
                       </li>
                   
                   </ul>
+                  <div class="card-header">
+                      <h3><small>Most Recent Comments</small></h3> 
+                      <p id="comment-display"></p>
+                     </div>
+                     <div class="card-body" id="recent-member">
+                          
+                       
+                     </div>
                 </div>
             </div>
             <div class="row border solid 4px border-dark d-flex flex-column" id="artistInfo">
@@ -133,6 +158,25 @@
           </div>  
           <div id="comments"></div>
 
-<script type="text/javascript" src="assets/javascript/app.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
+      
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+      
+        <script>
+              firebase.auth().onAuthStateChanged(function(user)
+              {
+      
+                  if(user){
+      
+                      window.location.href = "index.html";
+                  }
+              });
+          </script>          
+
+
+  </body>
 </html>

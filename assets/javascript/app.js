@@ -1,3 +1,5 @@
+// alert ("working");
+
 var bandsAPIkey = "939b9a06865777665ef5b95c31a05910"
 var bandsBaseURL = "https://rest.bandsintown.com/artists/"
 var artistName = " "
@@ -72,3 +74,219 @@ $("#commentButton").on("click", function (event) {
     `)
 
 })
+
+
+// Ends jQuery Ajax Call
+
+var config = {
+    apiKey: "AIzaSyA97hzCgDRHVJFCiOAJ6RVzx2F1hZsfKj4",
+    authDomain: "project-1-38041.firebaseapp.com",
+    databaseURL: "https://project-1-38041.firebaseio.com",
+    projectId: "project-1-38041",
+    storageBucket: "project-1-38041.appspot.com",
+    messagingSenderId: "521886266392",
+    appId: "1:521886266392:web:c4cd23c4069f7b77533f6d",
+    measurementId: "G-76GRV8ZP76"
+  };
+
+   firebase.initializeApp(config);
+
+
+   firebase.auth.Auth.Persistence.LOCAL;
+
+ $("#btn-login").click(function(){
+     var email= $("#username").val();
+     var password= $("#password").val();
+
+     if(email != "" && password != "")
+     {
+
+        var result = firebase.auth().signInWithEmailAndPassword(email, password);
+
+        result.catch(function(error){
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            alert("message : " + errorMessage);
+        });
+     }else{
+        //  alert("");
+     }
+ });
+
+ 
+ $("#btn-signup").click(function(){
+    var email= $("#emailsignup").val();
+    var password= $("#passwordsignup").val();
+    var confirmPassword= $("#passwordsignup_confirm").val();
+
+    if(email != "" && password != "" && confirmPassword != "")
+    {
+
+      if (password === confirmPassword){
+        var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        result.catch(function(error){
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            // console.log(errorCode);
+            // console.log(errorMessage);
+
+ 
+            alert("message : " + errorMessage);
+       });
+    }else{
+
+        alert("password does not match");
+    }
+    }else{
+       
+    }
+});
+
+
+ $("#btn-logout").click(function(){
+
+   firebase.auth().signOut();
+ });
+
+
+ $("#btn-resetPassword").click(function(){
+
+  var auth = firebase.auth();
+  var email = $("#resetUsername").val();
+
+  if(email != ""){
+     auth.sendPasswordResetEmail(email).then(function(){
+
+      alert("Email has been sent to you, Please check and verify.");
+     })
+
+     .catch(function(error){
+
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorCode);
+      console.log(errorMessage);
+
+
+      alert("message : " + errorMessage);
+
+     });
+  }else
+{
+    alert("Please enter your email address")
+  }
+});
+
+   
+ 
+ $("#btn-update").click(function(){
+
+  var phone = $("#phonenumber").val();
+  var address = $("#address").val();
+  var bio = $("#bio").val();
+  var fName= $("#fName").val();
+  var mName = $("#mName").val();
+  var lName = $("#lName").val();
+  var gender = $("#gender").val();
+
+  var rootRef = firebase.database().ref().child("Users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID);
+
+
+  // database.ref().on("child_added", function(snapshot){
+  //   console.log(snapshot.val());
+  //   console.log(snapshot.val().bio);
+
+  //   $("#address").text(snapshot.val().address);
+  //   $("#phonenumber").text(snapshot.val().phone);
+  //   $("#bio").text(snapshot.val().bio);
+  //   $("#fName").text(snapshot.val().fName);
+  //   $("#mName").text(snapshot.val().mName);
+  //   $("#lName").text(snapshot.val().lName);
+  //   $("#gender").text(snapshot.val().gender);
+  // });
+
+  if(fName!="" && lName!="" && phone!="" && mName!="" && gender!="" && bio!="" && address!=""){
+  
+    var userData = {
+      "phone": phone,
+      "address": address,
+      "bio": bio,
+      "firstname": fName,
+      "middlename": mName,
+      "lastname": lName,
+      "gender": gender,
+
+    };
+       
+    usersRef.set(userData, function(error){
+      if(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        // console.log(errorCode);
+        // console.log(errorMessage);
+
+
+        alert("message : " + errorMessage);
+      }else{
+        window.location.href = "music.html";
+        
+      }
+    });
+  }else{
+    alert("Form is incomplete. Please fill out all fields.");
+
+  }
+});
+
+// Usercomments and details 
+
+var dataRef = firebase.database();
+// Initial Values
+var name = "";
+var email = "";
+var age = 0;
+var comment = "";
+// Capture Button Click
+$("#add-user").on("click", function(event) {
+  event.preventDefault();
+  // YOUR TASK!!!
+  // Code in the logic for storing and retrieving the most recent user.
+  // Dont forget to provide initial data to your Firebase database.
+  name = $("#name-input").val().trim();
+  email = $("#email-input").val().trim();
+  age = $("#age-input").val().trim();
+  comment = $("#comment-input").val().trim();
+  // Code for the push
+  dataRef.ref().push({
+    name : name,
+    email : email,
+    age : age,
+    comment : comment,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+  });
+});
+// Firebase watcher + initial loader HINT: .on("value")
+dataRef.ref().on("child_added", function(snapshot) {
+  // Log everything that's coming out of snapshot
+  console.log(snapshot.val());
+  console.log(snapshot.val().name);
+  console.log(snapshot.val().email);
+  console.log(snapshot.val().age);
+  console.log(snapshot.val().comment);
+  // Change the HTML to reflect
+  $("#comment-display").append(`<p>${snapshot.val().email}</p> <p>${snapshot.val().comment}</p>`);  
+  // $("#email-display").append(`<p>${snapshot.val().email}</p>`);
+  // $("#age-display").append(`<p>${snapshot.val().age}</p>`);
+  // $("#comment-display").append(`<p>${snapshot.val().comment}</p>`);
+
+  // Handle the errors
+ }, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+ });

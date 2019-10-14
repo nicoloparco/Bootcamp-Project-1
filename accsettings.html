@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>account settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+   
+</head>
+<body>
+
+   <style>
+    body{
+	margin:0;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:100%;
+	position:relative;
+    background:url(../images/music\ pix3.jpg) no-repeat center;
+    background-size: cover;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-html{
+	width:100%;
+	height:auto;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(40,57,101,.9);
+}
+
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button{
+	background:#1161ee;
+}
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgba(255,255,255,.1);
+}
+
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+	text-align:center;
+}
+
+.form-wrapper, #gender{
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+#bio{
+    height: 200px;
+}
+    
+    </style>
+  
+    <div class="login-wrap">
+        <div class="login-html">
+            <h3>Account Settings</h3>
+            
+        <div class="login-form">
+            <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">First Name</label>
+                        <input id="fName" type="text" class="input">
+                    </div>
+
+                    <div class="group">
+                            <label for="user" class="label">Middle Name</label>
+                            <input id="mName" type="text" class="input">
+                        </div>
+                   
+                    <div class="group">
+                            <label for="user" class="label">Last Name</label>
+                            <input id="lName" type="text" class="input">
+                    </div>
+
+                    <div class="group">
+                            <label for="user" class="label">Address</label>
+                            <input id="address" type="text" class="input">
+                    </div>
+
+                    <div class="group">
+                            <label for="user" class="label">Phone Number</label>
+                            <input id="phonenumber" type="number" class="input">
+                    </div>
+                    
+                    <div class="form-wrapper">
+                        <select name="" id="gender" class="form control">
+                            <option value="" disabled selected >Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="female">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="group">
+                            <label for="user" class="label">Bio</label>
+                            <input id="bio" type="placeholder" class="input">
+                    </div>
+                        <div class="group">
+                            <input type="submit" id="btn-update" class="button" value="UPDATE">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="index.html">HOME</a>
+                        </div>
+                       
+                    </div>
+                </div>
+    
+            </div>
+        </div> 
+        <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
+        <script type="text/javascript" src="./assets/javascript/app.js"></script>
+        
+        <script>
+            firebase.auth().onAuthStateChanged(function(user){
+    
+                if(user)
+            {
+
+              var userID = firebase.auth().currentUser.uid;
+              
+              firebase.database().ref("Users/" + userID).once("value").then(function(snapshot){
+          if(snapshot.val())
+          {
+            window.location.href = "profile.html";
+           
+          }
+        });
+      }
+    });
+        
+        </script>
+    
+    </body>
+    </html>
