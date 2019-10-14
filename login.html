@@ -236,7 +236,7 @@ a{color:inherit;text-decoration:none}
               firebase.database().ref("Users/" + userID).once("value").then(function(snapshot){
           if(snapshot.val())
           {
-            window.location.href = "Profile.html";
+            window.location.href = "music.html";
            
           }else{
             window.location.href = "accsettings.html";
