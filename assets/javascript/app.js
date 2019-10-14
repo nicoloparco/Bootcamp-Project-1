@@ -151,6 +151,36 @@ var config = {
    firebase.auth().signOut();
  });
 
+
+ $("#btn-resetPassword").click(function(){
+
+  var auth = firebase.auth();
+  var email = $("#resetUsername").val();
+
+  if(email != ""){
+     auth.sendPasswordResetEmail(email).then(function(){
+
+      alert("Email has been sent to you, Please check and verify.");
+     })
+
+     .catch(function(error){
+
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorCode);
+      console.log(errorMessage);
+
+
+      alert("message : " + errorMessage);
+
+     });
+  }else
+{
+    alert("Please enter your email address")
+  }
+});
+
    
  
  $("#btn-update").click(function(){
