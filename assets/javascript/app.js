@@ -28,8 +28,6 @@ $("#searchButton").on("click", function (event) {
         method:"GET"
     }).then(function (response) {
         
-        $(".video").empty()
-        
         var videoID = (response.items["0"].id.videoId)
         const videoURL = "https://www.youtube.com/embed/" + videoID
     
@@ -58,6 +56,7 @@ $("#searchButton").on("click", function (event) {
                 <h3 class="mt-3">${artistName}</h3>    
                 <a href="${artistFacebook}">Facebook Page</a>
                 <h3 class="mt-3">Upcoming Events ${artistEvents}</h3>
+                <p>Check out their bandsintown page for ticket and venue information!</p>
                 <a href="${artistPage}">Bandsintown Page</a>
             </div>
         </div>
