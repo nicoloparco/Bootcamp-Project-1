@@ -34,7 +34,7 @@ $("#searchButton").on("click", function (event) {
         const videoURL = "https://www.youtube.com/embed/" + videoID
     
         $(".video").append(`
-        <iframe width="560" height="315" src="${videoURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="border solid 4px border-light" width="560" height="315" src="${videoURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         `)
     });
 
@@ -50,12 +50,16 @@ $("#searchButton").on("click", function (event) {
     
         $("#artistInfo").empty()
         $("#artistInfo").append(`
-        <div>
-        <img src="${artistImage}" height="300px" width="300px"></img>
-        <h3>Upcoming Events ${artistEvents}</h3>
-        <h3>${artistName}</h3>
-        <a href="${artistPage}">Bandsintown Page</a>
-        <a href="${artistFacebook}">Facebook Page</a>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="${artistImage}" height="300px" width="300px" class="border solid 4px border-light"></img>
+            </div>
+            <div class="col-md-8">
+                <h3 class="mt-3">${artistName}</h3>    
+                <a href="${artistFacebook}">Facebook Page</a>
+                <h3 class="mt-3">Upcoming Events ${artistEvents}</h3>
+                <a href="${artistPage}">Bandsintown Page</a>
+            </div>
         </div>
         `)
     })
