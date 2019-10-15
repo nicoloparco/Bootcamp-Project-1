@@ -5,8 +5,18 @@ body{
     color:whitesmoke;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.jumbotron{
+    background-color:rgb(52, 58, 64);
+}
+.display-4{
+    font-family:"Bungee Shade";
+    border:3px solid whitesmoke;
+    font-size:50px;
+}
+
 .navbar-brand{
-color:silver !important;
+color:whitesmoke;
 text-shadow:2px 2px black;
 font-size:30px;
 font-family:"Bungee Shade";
@@ -51,7 +61,6 @@ color:whitesmoke;
 
 a{
     color:whitesmoke;
-    text-decoration:overline;
     transition:1s ease;
     
 }
