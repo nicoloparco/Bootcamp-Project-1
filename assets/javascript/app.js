@@ -4,7 +4,7 @@ var bandsAPIkey = "939b9a06865777665ef5b95c31a05910"
 var bandsBaseURL = "https://rest.bandsintown.com/artists/"
 var artistName = " "
 
-var youtubeAPIkey = "AIzaSyD2W-_IP5IKWaeNV7d397KtunHP7OawBYA"
+var youtubeAPIkey = "AIzaSyCdWjeDZ0p9AKLIU5uB2fh_k4ZUbOxxeFs"
 var youtubeBaseURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="
 var youtubeSearch = " "
 var typeVideo = "&type=video"
@@ -19,6 +19,7 @@ $("#searchButton").on("click", function (event) {
 
     var youtubeURL = youtubeBaseURL + youtubeSearch + typeVideo + "&key=" + youtubeAPIkey
     var bandsURL = bandsBaseURL + artistName + "?app_id=" + bandsAPIkey
+    var bandsURLEvents = bandsBaseURL + artistName + "/events" + "?app_id=" + bandsAPIkey
     
     let recentSearch = $("#searchBar").val().trim()
     youtubeSearch = recentSearch
@@ -42,6 +43,7 @@ $("#searchButton").on("click", function (event) {
 
     $.ajax({
         url:bandsURL,
+        method:"GET"
     }).then(function (response) {
     
         var artistImage = response.image_url
@@ -50,7 +52,7 @@ $("#searchButton").on("click", function (event) {
         var artistName = response.name
         var artistFacebook = response.facebook_page_url
     
-        $("#artistInfo").empty()
+        
         $("#artistInfo").append(`
         <div class="row">
             <div class="col-md-4">
@@ -64,6 +66,34 @@ $("#searchButton").on("click", function (event) {
             </div>
         </div>
         `)
+    })
+    
+    $.ajax({
+        url:bandsURLEvents,
+        method:"GET"
+    }).then(function (response) {
+        console.log(response)
+        
+        var eventDate = response[0].datetime
+        var eventDescription = response[0].description
+        var eventLocationCity = response[0].venue.city
+        var eventLocationCountry = response[0].venue.country
+
+        console.log(eventDate)
+        console.log(eventDescription)
+        console.log(eventLocationCity)
+        console.log(eventLocationCountry)
+
+
+        $("upcomingEvent").append(`
+        <div class="col-md-6" id="eventInfo">
+        <h3>Nearest Event</h3>
+        <p>Date & Time: ${eventDate}</p>
+        <p>Description: ${eventDescription}</p>
+        <p>City: ${eventLocationCity}</p>
+        <p>Country: ${eventLocationCountry}</p>
+        </div>
+         `)
     })
 
 })
