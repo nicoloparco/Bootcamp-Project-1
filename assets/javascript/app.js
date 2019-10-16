@@ -88,10 +88,10 @@ $("#searchButton").on("click", function (event) {
         $("upcomingEvent").append(`
         <div class="col-md-6" id="eventInfo">
         <h3>Nearest Event</h3>
-        <p>${eventDate}</p>
-        <p>${eventDescription}</p>
-        <p>${eventLocationCity}</p>
-        <p>${eventLocationCountry}</p>
+        <p>Date & Time: ${eventDate}</p>
+        <p>Description: ${eventDescription}</p>
+        <p>City: ${eventLocationCity}</p>
+        <p>Country: ${eventLocationCountry}</p>
         </div>
          `)
     })
