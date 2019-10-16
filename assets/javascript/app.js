@@ -4,7 +4,7 @@ var bandsAPIkey = "939b9a06865777665ef5b95c31a05910"
 var bandsBaseURL = "https://rest.bandsintown.com/artists/"
 var artistName = " "
 
-var youtubeAPIkey = "AIzaSyD2W-_IP5IKWaeNV7d397KtunHP7OawBYA"
+var youtubeAPIkey = "AIzaSyCdWjeDZ0p9AKLIU5uB2fh_k4ZUbOxxeFs"
 var youtubeBaseURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="
 var youtubeSearch = " "
 var typeVideo = "&type=video"
