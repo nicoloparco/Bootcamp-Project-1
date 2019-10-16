@@ -1,4 +1,4 @@
-alert("working");
+
 var config = {
     apiKey: "AIzaSyA97hzCgDRHVJFCiOAJ6RVzx2F1hZsfKj4",
     authDomain: "project-1-38041.firebaseapp.com",
