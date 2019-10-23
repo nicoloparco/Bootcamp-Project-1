@@ -13,3 +13,5 @@
 - Ability for user to create an account in order to store this information
 
 - A live feed feature that displays most recent comments/ratings/reviews on searched artists 
+
+Live link to deployed page: https://nicoloparco.github.io/Bootcamp-Project-1/
